@@ -1,6 +1,6 @@
 # Лабораторная работа №1. Основы машинного обучения
 
-## Ход выполнения: https://colab.research.google.com/drive/1PlWwPk2b3ihDNDpLE6VMiqOCxE_WkkOF?usp=sharing
+## Ход выполнения в colab: https://colab.research.google.com/drive/1PlWwPk2b3ihDNDpLE6VMiqOCxE_WkkOF?usp=sharing
 
 
 ![alt text](image.png)
@@ -20,6 +20,6 @@
 
 ## При тестировании оказалось, что на маленькой выборке "микс" функций активации дает уменьшение точности, при том как на больших выборках лучше подходит комбинированный подход, а также использование LeakyReLU и ELU
 
-## Ход выполнения: https://colab.research.google.com/drive/1Q6c5hZMtwZGTSXKpIaT7wW41l0MarLi6?usp=sharing
+## Ход выполнения в colab: https://colab.research.google.com/drive/1Q6c5hZMtwZGTSXKpIaT7wW41l0MarLi6?usp=sharing
 
 ![alt text](image-2.png)
