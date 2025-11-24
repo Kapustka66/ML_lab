@@ -21,21 +21,13 @@ from tensorflow.keras.callbacks import LearningRateScheduler
 # 1. Загрузка и распаковка данных
 # ---------------------------
 
-# Используйте либо zip, либо tar.gz
-use_zip = True  # True если у вас zip, False если tar.gz
 
-if use_zip:
-    zip_path = "notMNIST_small.zip"  # ваш файл
-    extract_folder = "notMNIST_small/notMNIST_small"
-    if not os.path.exists(extract_folder):
-        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-            zip_ref.extractall(extract_folder)
-else:
-    tar_path = "notMNIST_small.tar.gz"
-    extract_folder = "notMNIST_small"
-    if not os.path.exists(extract_folder):
-        with tarfile.open(tar_path) as tar_ref:
-            tar_ref.extractall(extract_folder)
+
+zip_path = "notMNIST_small.zip"
+extract_folder = "notMNIST_small/notMNIST_small"
+if not os.path.exists(extract_folder):
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(extract_folder)
 
 # ---------------------------
 # 2. Функция загрузки изображений
