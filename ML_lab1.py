@@ -11,8 +11,8 @@ from sklearn.preprocessing import LabelEncoder
 # -------------------------------
 # 1. Распаковка архива
 # -------------------------------
-zip_path = '/home/kapustka/Рабочий стол/maga/notMNIST_small.zip'
-extract_dir = '/home/kapustka/Рабочий стол/maga/notMNIST_small'
+zip_path = 'notMNIST_small.zip'
+extract_dir = 'notMNIST_small'
 
 if not os.path.exists(extract_dir):
     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
@@ -153,10 +153,21 @@ accuracies = []
 
 for size in train_sample_sizes:
     if size < 1000:
-        clf = MLPClassifier(hidden_layer_sizes=(128,), max_iter=200, random_state=42)
+        clf = MLPClassifier(
+            hidden_layer_sizes=(256, 128),
+            activation='relu',
+            max_iter=200,
+            random_state=42
+        )
     else:
-        clf = MLPClassifier(hidden_layer_sizes=(128,), max_iter=200,
-                            early_stopping=True, validation_fraction=0.1, random_state=42)
+        clf = MLPClassifier(
+            hidden_layer_sizes=(256, 128),
+            activation='relu',
+            max_iter=200,
+            early_stopping=True,
+            validation_fraction=0.1,
+            random_state=42
+        )
     clf.fit(X_train_arrays[:size], y_train_encoded[:size])
     y_pred = clf.predict(X_val_arrays)
     acc = accuracy_score(y_val_encoded, y_pred)

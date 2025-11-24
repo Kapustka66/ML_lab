@@ -1,8 +1,5 @@
-# ML_lab2.py
 import os
 import zipfile
-import tarfile
-import urllib.request
 from PIL import Image
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -20,8 +17,6 @@ from tensorflow.keras.callbacks import LearningRateScheduler
 # ---------------------------
 # 1. Загрузка и распаковка данных
 # ---------------------------
-
-
 
 zip_path = "notMNIST_small.zip"
 extract_folder = "notMNIST_small/notMNIST_small"
@@ -109,13 +104,10 @@ print("Deep NN test accuracy:", test_acc)
 print(f"Улучшение по сравнению с логистической регрессией: {test_acc - accuracy_score(np.argmax(y_test, axis=1), y_pred):.4f}")
 
 # Задание 1: 3 скрытых слоя (512 → 256 → 128 нейронов), ReLU, Dropout 0.5, L2-регуляризация.
-
-# Задание 2: Точность улучшилась с 87% до 92.4% по сравнению с логистической регрессией.
-
+# Задание 2: Точность улучшилась с 87% до 91.5% по сравнению с логистической регрессией.
 # Задание 3: Регуляризация + Dropout помогли бороться с переобучением — валидационная точность остаётся стабильной и не падает ниже 91–92%.
-
 # Задание 4: Использование динамического learning rate показало,
-# что модель достигает высокой точности (92–93%).
+# что модель достигает высокой точности (91–93%).
 # Для достижения 97.1% потребуется большой набор notMNIST_large,
 # увеличение количества нейронов и эпох, возможно,
 # использование дополнительных оптимизаторов (Adam, RMSprop).
